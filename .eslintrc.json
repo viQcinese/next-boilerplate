@@ -1,5 +1,5 @@
 {
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "import-helpers"],
   "extends": [
     "next/core-web-vitals",
     "eslint:recommended",
@@ -10,6 +10,17 @@
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "@typescript-eslint/no-unused-vars": ["error", {"argsIgnorePattern": "^_" }],
     "@typescript-eslint/no-explicit-any": "error",
-    "no-console": "error"
+    "no-console": "error",
+    "import-helpers/order-imports": ["error", {
+        "newlinesBetween": "never",
+        "alphabetize": { "order": "asc", "ignoreCase": false },
+        "groups": [
+          ["/^react/", "/^next/"], 
+          "module", 
+          "/^@components/",
+          ["parent", "sibling", "index"]
+        ]
+      }
+    ]
   }
 }
