@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/RedHatText/red-hat-text-v6-latin-400.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/RedHatText/red-hat-text-v6-latin-500.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Red Hat Text';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/RedHatText/red-hat-text-v6-latin-700.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Officina Serif';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/OfficinaSerif/OfficinaSerif-Bold.woff') format('woff');
+}
