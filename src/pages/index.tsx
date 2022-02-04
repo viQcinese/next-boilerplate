@@ -1,30 +1,36 @@
-import React from "react";
-import {
-  Box,
-  CustomTheme,
-  Heading,
-  Text,
-  useTheme,
-  Button,
-} from "@chakra-ui/react";
+import { InferGetStaticPropsType } from "next";
+import { gql } from "@apollo/client";
+import { Box, CustomTheme, Heading, useTheme } from "@chakra-ui/react";
+import client from "@app/apollo/client";
+import { GetHomePage } from "@app/types/__generated__/GetHomePage";
 
-export default function Home() {
+export default function HomePage(
+  props: InferGetStaticPropsType<typeof getStaticProps>
+) {
   const { gradient } = useTheme<CustomTheme>();
+  const { title } = props.pageHome;
 
   return (
     <Box bgGradient={gradient.main} color="white" p={6}>
-      <Heading>Heading font is ITC Officina Serif</Heading>
-      <Text>Body font is Red Hat Text</Text>
-      <Button size="sm" isDisabled>
-        Consulte agora por
-        <Text ml={2} fontWeight={700}>
-          R$ 79,90!
-        </Text>
-      </Button>
-      <Button size="md">Assine Já</Button>
-      <Text fontSize={["1rem", "2rem", "3rem", "4rem", "5rem", "6rem"]}>
-        Responsive font size
-      </Text>
+      <Heading>{title}</Heading>
     </Box>
   );
+}
+
+const GET_HOME_PAGE = gql`
+  query GetHomePage {
+    pageHome {
+      title
+    }
+  }
+`;
+
+export async function getStaticProps() {
+  const { data } = await client.query<GetHomePage>({
+    query: GET_HOME_PAGE,
+  });
+
+  return {
+    props: { pageHome: data.pageHome },
+  };
 }

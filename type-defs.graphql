@@ -1,0 +1,7 @@
+extend type Query {
+    pageHome: PageHome!
+}
+
+type PageHome {
+    title: String!
+}

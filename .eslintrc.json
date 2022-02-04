@@ -17,8 +17,13 @@
         "groups": [
           ["/^react/", "/^next/"], 
           "module", 
-          "/^chakra-ui/",
+          "/^@chakra-ui/",
+          "/^@pages/",
           "/^@components/",
+          "/^@styles/",
+          "/^@app/apollo/",
+          "/^@app/types/",
+          "/^@utils/",
           ["parent", "sibling", "index"]
         ]
       }
