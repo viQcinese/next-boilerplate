@@ -1,17 +1,17 @@
 extend type Query {
-    pageHome: PageHome!
-    subscriptions: [Subscription!]!
+  pageHome: PageHome!
+  subscriptions: [Subscription!]!
 }
 
 type PageHome {
-    title: String!
-    description: String!
+  title: String!
+  description: String!
 }
 
 type Subscription {
-    name: String!
-    value: Int!
-    description: String!
-    features: [String!]!
-    annualSaving: Int
+  name: String!
+  value: Int!
+  description: String!
+  features: [String!]!
+  annualSaving: Int
 }
