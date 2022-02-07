@@ -1,4 +1,5 @@
 import { InMemoryCache, InMemoryCacheConfig } from "@apollo/client";
+import { pageHome, subscriptions } from "./mocks";
 
 export const cacheConfig: InMemoryCacheConfig = {
   typePolicies: {
@@ -6,11 +7,11 @@ export const cacheConfig: InMemoryCacheConfig = {
       fields: {
         pageHome: {
           keyArgs: false,
-          read() {
-            return {
-              title: "My Title",
-            };
-          },
+          read: () => pageHome,
+        },
+        subscriptions: {
+          keyArgs: false,
+          read: () => subscriptions,
         },
       },
     },

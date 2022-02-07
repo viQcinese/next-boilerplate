@@ -15,7 +15,8 @@
         "newlinesBetween": "never",
         "alphabetize": { "order": "asc", "ignoreCase": false },
         "groups": [
-          ["/^react/", "/^next/"], 
+          "/^react/",
+          "/^next/",
           "module", 
           "/^@chakra-ui/",
           "/^@pages/",
